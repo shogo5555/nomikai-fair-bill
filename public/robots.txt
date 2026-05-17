@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://nomikai-fair-bill-production.up.railway.app/sitemap.xml
