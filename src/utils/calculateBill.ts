@@ -4,6 +4,7 @@ import type {
   RoundedBillResult,
   RoundingUnit,
 } from '../types'
+import { formatWeightLabel } from './presets'
 
 /** コピー文面に挿入するサービスURL。ドメイン変更時はここを更新する */
 const SERVICE_URL = 'https://nomikai-fair-bill-production.up.railway.app/'
@@ -97,9 +98,23 @@ export function applyRounding(
   }
 }
 
-/** LINE に貼りやすい丸め精算のテキスト */
-export function formatRoundedResultForCopy(result: RoundedBillResult): string {
+/**
+ * LINE に貼りやすい丸め精算のテキストを生成する。
+ * @param members - 各人の支払い割合ラベルを表示するために必要
+ * @param memo    - 幹事が入力した支払いメモ。空文字なら省略
+ */
+export function formatRoundedResultForCopy(
+  result: RoundedBillResult,
+  members: Member[],
+  memo: string = '',
+): string {
   if (result.others.length === 0 && result.payerExactAmount === 0) return ''
+
+  const memberMap = new Map(members.map((m) => [m.id, m]))
+  const labelFor = (id: string): string => {
+    const m = memberMap.get(id)
+    return m ? formatWeightLabel(m) : ''
+  }
 
   const unitLabel = `${result.unit.toLocaleString()}円単位`
   const lines: string[] = []
@@ -114,7 +129,9 @@ export function formatRoundedResultForCopy(result: RoundedBillResult): string {
     lines.push('（他の参加者なし）')
   } else {
     result.others.forEach((o) => {
-      lines.push(`・${o.name}: ${o.roundedAmount.toLocaleString()}円`)
+      const reason = labelFor(o.id)
+      const suffix = reason ? `（${reason}）` : ''
+      lines.push(`・${o.name}: ${o.roundedAmount.toLocaleString()}円${suffix}`)
     })
   }
 
@@ -122,12 +139,22 @@ export function formatRoundedResultForCopy(result: RoundedBillResult): string {
   const diffSign =
     result.payerDiff === 0 ? '±' : result.payerDiff > 0 ? '+' : '−'
   const diffAbs = Math.abs(result.payerDiff)
+  const payerReason = labelFor(result.payerId)
+  const payerReasonSuffix = payerReason ? `（${payerReason}）` : ''
   lines.push(
     `${result.payerName}さんの負担: ${result.payerEffectiveAmount.toLocaleString()}円` +
+      payerReasonSuffix +
       (result.payerDiff === 0
         ? ''
         : `（丸めにより ${diffSign}${diffAbs.toLocaleString()}円）`),
   )
+
+  const trimmedMemo = memo.trim()
+  if (trimmedMemo) {
+    lines.push('')
+    lines.push('▼ メモ')
+    lines.push(trimmedMemo)
+  }
 
   lines.push('')
   lines.push(`（計算: ${SERVICE_URL}）`)

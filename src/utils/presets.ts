@@ -1,4 +1,4 @@
-import type { CoefficientPreset, RoundingUnit } from '../types'
+import type { CoefficientPreset, Member, RoundingUnit } from '../types'
 
 export const COEFFICIENT_PRESETS: readonly CoefficientPreset[] = [
   { id: 'half', label: '途中参加', value: 0.5 },
@@ -43,4 +43,17 @@ export function parseWeightInput(raw: string): number | null {
   const parsed = Number(normalized)
   if (!Number.isFinite(parsed)) return null
   return clampWeight(parsed)
+}
+
+/**
+ * 支払い割合ラベルを生成する。
+ * - プリセット選択時:  `多め ×1.5` のように「ラベル + 倍率」
+ * - カスタム入力時:    `×1.4` のように倍率のみ
+ */
+export function formatWeightLabel(member: Member): string {
+  const preset = COEFFICIENT_PRESETS.find(
+    (p) => p.id === member.selectedPresetId,
+  )
+  const value = round1(member.weight)
+  return preset ? `${preset.label} ×${value}` : `×${value}`
 }

@@ -1,12 +1,19 @@
 import { useState } from 'react'
-import type { BillResult, RoundedBillResult, RoundingUnit } from '../types'
+import type {
+  BillResult,
+  Member,
+  RoundedBillResult,
+  RoundingUnit,
+} from '../types'
 import { formatRoundedResultForCopy } from '../utils/calculateBill'
-import { ROUNDING_UNITS } from '../utils/presets'
+import { ROUNDING_UNITS, formatWeightLabel } from '../utils/presets'
 
 type Props = {
   result: BillResult
   rounded: RoundedBillResult
   roundingUnit: RoundingUnit
+  members: Member[]
+  memo: string
   onChangeRoundingUnit: (unit: RoundingUnit) => void
   onBack: () => void
   onReset: () => void
@@ -16,12 +23,20 @@ export function Step4Result({
   result,
   rounded,
   roundingUnit,
+  members,
+  memo,
   onChangeRoundingUnit,
   onBack,
   onReset,
 }: Props) {
   const [copied, setCopied] = useState(false)
-  const copyText = formatRoundedResultForCopy(rounded)
+  const copyText = formatRoundedResultForCopy(rounded, members, memo)
+
+  const memberMap = new Map(members.map((m) => [m.id, m]))
+  const labelFor = (id: string): string => {
+    const m = memberMap.get(id)
+    return m ? formatWeightLabel(m) : ''
+  }
 
   const exactOthers = result.perMember.filter((p) => p.id !== result.payerId)
   const payerExact = result.perMember.find((p) => p.id === result.payerId)
@@ -39,6 +54,7 @@ export function Step4Result({
   const diffSign =
     rounded.payerDiff === 0 ? '±' : rounded.payerDiff > 0 ? '+' : '−'
   const diffAbs = Math.abs(rounded.payerDiff)
+  const trimmedMemo = memo.trim()
 
   return (
     <div className="flex flex-col gap-5">
@@ -90,13 +106,18 @@ export function Step4Result({
             rounded.others.map((o) => (
               <li
                 key={o.id}
-                className="flex items-baseline justify-between border-b border-white/20 pb-2 last:border-0"
+                className="border-b border-white/20 pb-2 last:border-0"
               >
-                <span className="text-base font-bold">{o.name}</span>
-                <span className="text-xl font-bold tabular-nums">
-                  {o.roundedAmount.toLocaleString()}
-                  <span className="ml-0.5 text-sm font-normal">円</span>
-                </span>
+                <div className="flex items-baseline justify-between">
+                  <span className="text-base font-bold">{o.name}</span>
+                  <span className="text-xl font-bold tabular-nums">
+                    {o.roundedAmount.toLocaleString()}
+                    <span className="ml-0.5 text-sm font-normal">円</span>
+                  </span>
+                </div>
+                <p className="mt-0.5 text-[11px] opacity-80">
+                  {labelFor(o.id)}
+                </p>
               </li>
             ))
           )}
@@ -112,6 +133,9 @@ export function Step4Result({
           {rounded.payerEffectiveAmount.toLocaleString()}
           <span className="ml-1 text-base font-normal text-gray-500">円</span>
         </p>
+        <p className="mt-0.5 text-[11px] text-gray-500">
+          {labelFor(result.payerId)}
+        </p>
         {rounded.payerDiff !== 0 && (
           <p className="mt-1 text-xs text-gray-500">
             丸めにより、立替者の負担が {diffSign}
@@ -119,6 +143,16 @@ export function Step4Result({
           </p>
         )}
       </section>
+
+      {/* 支払いメモ（あれば） */}
+      {trimmedMemo && (
+        <section className="rounded-xl border border-amber-200 bg-amber-50 p-4">
+          <p className="text-xs font-bold text-amber-800">支払いメモ</p>
+          <p className="mt-1 whitespace-pre-wrap text-sm text-gray-800">
+            {trimmedMemo}
+          </p>
+        </section>
+      )}
 
       <button
         type="button"
@@ -144,7 +178,12 @@ export function Step4Result({
                 key={p.id}
                 className="flex items-baseline justify-between text-sm"
               >
-                <span className="text-gray-700">{p.name}</span>
+                <span className="text-gray-700">
+                  {p.name}
+                  <span className="ml-1 text-[10px] text-gray-400">
+                    {labelFor(p.id)}
+                  </span>
+                </span>
                 <span className="font-bold tabular-nums text-gray-900">
                   {p.amount.toLocaleString()}円
                 </span>
@@ -154,6 +193,9 @@ export function Step4Result({
               <li className="flex items-baseline justify-between border-t border-gray-100 pt-2 text-sm">
                 <span className="text-gray-500">
                   {result.payerName}（立替者本人）
+                  <span className="ml-1 text-[10px] text-gray-400">
+                    {labelFor(result.payerId)}
+                  </span>
                 </span>
                 <span className="font-bold tabular-nums text-gray-900">
                   {payerExact.amount.toLocaleString()}円

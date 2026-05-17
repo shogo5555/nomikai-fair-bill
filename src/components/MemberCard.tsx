@@ -119,7 +119,7 @@ export function MemberCard({
 
       <div className="flex items-center justify-between gap-2 border-t border-gray-100 pt-2">
         <span className="text-xs text-gray-500">
-          係数を調整
+          支払い割合を調整
           {m.selectedPresetId === CUSTOM_PRESET_ID && (
             <span className="ml-1 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold text-amber-700">
               カスタム
@@ -129,7 +129,7 @@ export function MemberCard({
         <div className="flex items-center gap-1.5">
           <button
             type="button"
-            aria-label="係数を減らす"
+            aria-label="支払い割合を減らす"
             onClick={handleDecrement}
             disabled={round1(m.weight) <= MIN_WEIGHT}
             className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100 text-lg font-bold text-gray-700 hover:bg-gray-200 disabled:opacity-40"
@@ -142,12 +142,12 @@ export function MemberCard({
             value={weightInput}
             onChange={handleInputChange}
             onBlur={handleInputBlur}
-            aria-label="係数を入力"
+            aria-label="支払い割合（倍率）を入力"
             className="w-16 rounded-lg border border-gray-200 px-2 py-1.5 text-center text-base font-bold tabular-nums focus:border-indigo-600 focus:outline-none"
           />
           <button
             type="button"
-            aria-label="係数を増やす"
+            aria-label="支払い割合を増やす"
             onClick={handleIncrement}
             disabled={round1(m.weight) >= MAX_WEIGHT}
             className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100 text-lg font-bold text-gray-700 hover:bg-gray-200 disabled:opacity-40"

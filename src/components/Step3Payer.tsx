@@ -3,15 +3,21 @@ import type { Member } from '../types'
 type Props = {
   members: Member[]
   payerId: string
+  memo: string
   onSelect: (id: string) => void
+  onChangeMemo: (memo: string) => void
   onBack: () => void
   onNext: () => void
 }
 
+const MEMO_MAX_LENGTH = 200
+
 export function Step3Payer({
   members,
   payerId,
+  memo,
   onSelect,
+  onChangeMemo,
   onBack,
   onNext,
 }: Props) {
@@ -59,6 +65,24 @@ export function Step3Payer({
           )
         })}
       </ul>
+
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="payment-memo" className="text-sm font-bold text-gray-700">
+          支払いメモ（任意）
+        </label>
+        <textarea
+          id="payment-memo"
+          value={memo}
+          onChange={(e) => onChangeMemo(e.target.value.slice(0, MEMO_MAX_LENGTH))}
+          placeholder="例: PayPayでお願いします / 現金でお願いします"
+          rows={2}
+          maxLength={MEMO_MAX_LENGTH}
+          className="w-full resize-none rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-indigo-600 focus:outline-none"
+        />
+        <p className="text-right text-[10px] text-gray-400">
+          {memo.length} / {MEMO_MAX_LENGTH}
+        </p>
+      </div>
 
       <div className="mt-2 flex gap-3">
         <button

@@ -29,7 +29,7 @@ export function Step2Members({
       <div>
         <h2 className="text-xl font-bold text-gray-900">参加メンバー</h2>
         <p className="mt-1 text-sm text-gray-500">
-          名前と係数（飲み方の傾斜）を選んでください
+          名前と支払い割合（飲み方や役職に応じた倍率）を選んでください
         </p>
       </div>
 

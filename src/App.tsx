@@ -36,6 +36,7 @@ function App() {
     createMember(2),
   ])
   const [payerId, setPayerId] = useState('')
+  const [paymentMemo, setPaymentMemo] = useState('')
   const [roundingUnit, setRoundingUnit] =
     useState<RoundingUnit>(DEFAULT_ROUNDING_UNIT)
 
@@ -90,6 +91,7 @@ function App() {
     setTotal(0)
     setMembers([createMember(1), createMember(2)])
     setPayerId('')
+    setPaymentMemo('')
     setRoundingUnit(DEFAULT_ROUNDING_UNIT)
   }
 
@@ -98,7 +100,7 @@ function App() {
       <div className="mx-auto flex min-h-screen max-w-[390px] flex-col bg-white shadow-sm">
         <header className="px-5 pt-6">
           <h1 className="text-center text-lg font-bold text-gray-900">
-            飲み会傾斜会計
+            飲み会幹事会計
           </h1>
           <StepIndicator current={step} total={TOTAL_STEPS} />
         </header>
@@ -127,7 +129,9 @@ function App() {
             <Step3Payer
               members={members}
               payerId={payerId}
+              memo={paymentMemo}
               onSelect={setPayerId}
+              onChangeMemo={setPaymentMemo}
               onBack={() => setStep(2)}
               onNext={() => setStep(4)}
             />
@@ -137,6 +141,8 @@ function App() {
               result={result}
               rounded={rounded}
               roundingUnit={roundingUnit}
+              members={members}
+              memo={paymentMemo}
               onChangeRoundingUnit={setRoundingUnit}
               onBack={() => setStep(3)}
               onReset={reset}
