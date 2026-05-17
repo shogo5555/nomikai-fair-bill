@@ -143,6 +143,17 @@ function App() {
             />
           )}
         </main>
+
+        <footer className="px-5 pb-5 pt-2 text-center text-[10px] text-gray-400">
+          <a
+            href="https://forms.gle/6YtDK887Z1z8M5Mn8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-600"
+          >
+            フィードバックを送る
+          </a>
+        </footer>
       </div>
     </div>
   )

@@ -9,6 +9,21 @@ export function Step1Total({ total, onChange, onNext }: Props) {
 
   return (
     <div className="flex flex-col gap-6">
+      <section className="rounded-xl bg-indigo-50 p-4 text-xs leading-relaxed text-gray-700">
+        <p className="font-bold text-indigo-900">このツールでできること</p>
+        <ul className="mt-1 list-disc space-y-0.5 pl-4">
+          <li>合計金額を係数（飲み方の傾斜）で公平に配分</li>
+          <li>100円単位など丸めて支払いやすい金額に</li>
+          <li>LINE 用テキストをワンタップでコピー</li>
+        </ul>
+        <p className="mt-3 font-bold text-indigo-900">つかい方（30秒）</p>
+        <ol className="mt-1 list-decimal space-y-0.5 pl-4">
+          <li>合計金額を入力</li>
+          <li>メンバーと係数を選ぶ</li>
+          <li>立替者を選んで完了</li>
+        </ol>
+      </section>
+
       <div>
         <h2 className="text-xl font-bold text-gray-900">合計金額</h2>
         <p className="mt-1 text-sm text-gray-500">
