@@ -5,6 +5,9 @@ import type {
   RoundingUnit,
 } from '../types'
 
+/** コピー文面に挿入するサービスURL。ドメイン変更時はここを更新する */
+const SERVICE_URL = 'https://nomikai-fair-bill-production.up.railway.app/'
+
 /**
  * 倍率ベースで負担額を計算する純粋関数。
  * - 各人の負担額 = total × (weight / weight合計)
@@ -125,6 +128,9 @@ export function formatRoundedResultForCopy(result: RoundedBillResult): string {
         ? ''
         : `（丸めにより ${diffSign}${diffAbs.toLocaleString()}円）`),
   )
+
+  lines.push('')
+  lines.push(`（計算: ${SERVICE_URL}）`)
 
   return lines.join('\n')
 }
