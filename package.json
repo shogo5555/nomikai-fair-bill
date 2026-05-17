@@ -1,13 +1,18 @@
 {
-  "name": "temp-vite",
+  "name": "nomikai-fair-bill",
+  "description": "A mobile-friendly weighted bill splitting tool for drinking parties.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite preview --host 0.0.0.0 --port ${PORT:-4173}"
   },
   "dependencies": {
     "react": "^19.2.6",
