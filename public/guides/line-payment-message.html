@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>
+      飲み会幹事がLINE・メールで送る会計報告文テンプレ｜飲み会幹事会計サポート
+    </title>
+    <meta
+      name="description"
+      content="飲み会後に幹事がLINEやメールで会計報告を送るときの文面テンプレを紹介。支払い金額・支払い方法・締切の伝え方、役職別の多め支払い、途中参加者がいる場合の角の立たない言い回しまでまとめます。"
+    />
+    <link
+      rel="canonical"
+      href="https://nomikai-fair-bill-production.up.railway.app/guides/line-payment-message.html"
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="飲み会幹事がLINE・メールで送る会計報告文テンプレ"
+    />
+    <meta
+      property="og:description"
+      content="幹事向け。LINEとメールそれぞれの会計報告文テンプレ、役職別の多め支払い・途中参加・支払い方法の伝え方をまとめました。"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://nomikai-fair-bill-production.up.railway.app/guides/line-payment-message.html"
+    />
+    <meta
+      property="og:image"
+      content="https://nomikai-fair-bill-production.up.railway.app/og-image.png"
+    />
+
+    <style>
+      :root {
+        --indigo-900: #312e81;
+        --indigo-700: #4338ca;
+        --indigo-600: #4f46e5;
+        --gray-900: #1f2937;
+        --gray-700: #374151;
+        --gray-500: #6b7280;
+        --gray-300: #d1d5db;
+        --gray-200: #e5e7eb;
+        --gray-100: #f3f4f6;
+        --gray-50: #f9fafb;
+        --amber-50: #fffbeb;
+        --amber-200: #fde68a;
+        --amber-800: #92400e;
+        --sky-50: #f0f9ff;
+        --sky-200: #bae6fd;
+        --sky-800: #075985;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--gray-50);
+        color: var(--gray-900);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Meiryo",
+          sans-serif;
+        line-height: 1.75;
+        font-size: 16px;
+      }
+      .site-header,
+      .site-footer {
+        background: #fff;
+        border-bottom: 1px solid var(--gray-200);
+        padding: 12px 20px;
+        text-align: center;
+        font-size: 13px;
+      }
+      .site-footer {
+        border-bottom: 0;
+        border-top: 1px solid var(--gray-200);
+        margin-top: 40px;
+        color: var(--gray-500);
+      }
+      .site-header a,
+      .site-footer a {
+        color: var(--indigo-700);
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .site-header a:hover,
+      .site-footer a:hover {
+        text-decoration: underline;
+      }
+      main.article {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 24px 20px 40px;
+      }
+      main.article h1 {
+        font-size: 24px;
+        line-height: 1.4;
+        color: var(--indigo-900);
+        margin: 8px 0 16px;
+      }
+      main.article h2 {
+        font-size: 19px;
+        line-height: 1.4;
+        color: var(--indigo-900);
+        margin: 32px 0 8px;
+        padding-top: 8px;
+        border-top: 1px solid var(--gray-200);
+      }
+      main.article h3 {
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--indigo-700);
+        margin: 20px 0 6px;
+      }
+      main.article p {
+        margin: 12px 0;
+      }
+      main.article ul,
+      main.article ol {
+        padding-left: 20px;
+        margin: 8px 0;
+      }
+      main.article li {
+        margin: 4px 0;
+      }
+      main.article .lead {
+        color: var(--gray-700);
+        background: #fff;
+        border-left: 3px solid var(--indigo-600);
+        padding: 12px 14px;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      /* LINE風の例文ブロック（オレンジ系） */
+      main.article .line-example {
+        background: var(--amber-50);
+        border: 1px solid var(--amber-200);
+        border-radius: 8px;
+        padding: 14px 16px;
+        font-family: ui-monospace, "Menlo", "Consolas", monospace;
+        font-size: 13px;
+        white-space: pre-wrap;
+        color: var(--gray-900);
+        margin: 12px 0;
+        line-height: 1.7;
+      }
+      main.article .line-example::before {
+        content: "LINE 例";
+        display: inline-block;
+        background: var(--amber-200);
+        color: var(--amber-800);
+        font-family: -apple-system, "Hiragino Sans", "Meiryo", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+      }
+      /* メール風の例文ブロック（ブルー系） */
+      main.article .mail-example {
+        background: var(--sky-50);
+        border: 1px solid var(--sky-200);
+        border-radius: 8px;
+        padding: 14px 16px;
+        font-family: ui-monospace, "Menlo", "Consolas", monospace;
+        font-size: 13px;
+        white-space: pre-wrap;
+        color: var(--gray-900);
+        margin: 12px 0;
+        line-height: 1.7;
+      }
+      main.article .mail-example::before {
+        content: "メール 例";
+        display: inline-block;
+        background: var(--sky-200);
+        color: var(--sky-800);
+        font-family: -apple-system, "Hiragino Sans", "Meiryo", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+      }
+      main.article .cta {
+        text-align: center;
+        margin: 28px 0;
+      }
+      main.article .cta-button {
+        display: inline-block;
+        background: var(--indigo-600);
+        color: #fff;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 14px 28px;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+      }
+      main.article .cta-button:hover {
+        background: var(--indigo-700);
+      }
+      main.article .cta-note {
+        font-size: 12px;
+        color: var(--gray-500);
+        margin-top: 6px;
+      }
+      main.article .word-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+        font-size: 14px;
+      }
+      main.article .word-table th,
+      main.article .word-table td {
+        border: 1px solid var(--gray-200);
+        padding: 8px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      main.article .word-table th {
+        background: var(--gray-100);
+        font-weight: 700;
+        color: var(--gray-700);
+        width: 40%;
+      }
+      main.article .refs {
+        font-size: 14px;
+      }
+      main.article .refs a {
+        color: var(--indigo-600);
+      }
+      main.article .refs-note {
+        font-size: 12px;
+        color: var(--gray-500);
+        margin-bottom: 8px;
+      }
+      main.article .disclaimer {
+        font-size: 12px;
+        color: var(--gray-500);
+        margin-top: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/">← 飲み会幹事会計サポート</a>
+    </header>
+
+    <main class="article">
+      <h1>飲み会幹事がLINE・メールで送る会計報告文テンプレ</h1>
+
+      <p class="lead">
+        飲み会の幹事になると、計算だけでなく「どう伝えるか」も悩みのタネ。このページでは、LINEとメールそれぞれの会計報告文の例と、角が立たない伝え方のコツをまとめました。会社・サークル・友人グループの幹事が、迷ったときの文面の<strong>たたき台</strong>として使える形を目指しています。
+      </p>
+
+      <!-- TODO: 広告枠（記事上部）。将来 Google AdSense 等を入れる場合はここに。 -->
+
+      <h2>1. 幹事の会計連絡で大事な6つのポイント</h2>
+      <p>
+        どの場面でも共通する、会計連絡の基本は次の6点です。「これだけ満たせば失礼にはならない」という最低限のチェックリストとして使えます。
+      </p>
+      <ul>
+        <li><strong>金額を明確に書く</strong>（合計、各自の負担額、立替額）</li>
+        <li><strong>支払い方法を明確にする</strong>（PayPay／現金／銀行振込など）</li>
+        <li><strong>締切がある場合は書く</strong>（◯月◯日まで、など）</li>
+        <li><strong>多めに払ってくれた人への感謝を書く</strong></li>
+        <li><strong>余剰金や不足分がある場合は扱いを書く</strong>（立替者が吸収／次回繰越など）</li>
+        <li><strong>個人を責める表現を避ける</strong>（「Aさん未払い」ではなく「まだの方はご確認お願いします」）</li>
+      </ul>
+      <p>
+        会社・サークル・友人グループで、どこまで丁寧に書くかは関係性で変わります。同期グループなら短く、上司を含む会社のメールなら丁寧に、と書き分けるのが安全です。
+      </p>
+
+      <h2>2. 【LINE向け】シンプルな会計報告文</h2>
+      <p>
+        LINEは短く、要点だけが伝わるのが理想です。だいたい以下の構成でまとまります。
+      </p>
+      <div class="line-example">昨日はありがとうございました！
+会計は以下でお願いします。
+
+合計：12,000円
+立替：田中さん
+田中さんへ
+・Aさん：3,000円
+・Bさん：3,000円
+・Cさん：3,000円
+
+支払いはPayPayまたは現金でお願いします。
+計算はこちらで作成しました：
+https://nomikai-fair-bill-production.up.railway.app/</div>
+      <p>
+        URLを最後に1行入れておくと、「どう計算したの？」と聞かれたときの説明にもなります。
+      </p>
+
+      <h2>3. 【LINE向け】役職・多め支払いがある場合の文面</h2>
+      <p>
+        上司や先輩に多めに払ってもらった場合は、配分の<strong>意図</strong>を一言添えると角が立ちません。「上司だから多く払って当然」のような書き方は避けるのが無難です。
+      </p>
+      <div class="line-example">お疲れさまでした！本日の会計をお送りします。
+
+合計：20,000円
+立替：山田さん
+
+山田さんへ
+・部長：6,000円（少し多め）
+・課長：5,000円（少し多め）
+・私：3,000円
+・新人さん：2,000円
+
+今回は役職・参加時間を考慮して、少し傾斜をつけています。
+目安として、若手は軽め、上位者は少し多めにしています。
+ご確認のほどお願いします！</div>
+      <p>
+        「ありがとうございました」「多めに払っていただき助かります」と感謝を一言添えると、上司側も気持ちよく受け取れます。
+      </p>
+
+      <h2>4. 【LINE向け】途中参加・途中退席がいる場合の文面</h2>
+      <p>
+        参加時間に差があるときは、最初に「軽めにしている」ことを明示するとスムーズです。
+      </p>
+      <div class="line-example">昨日はお疲れさまでした！
+途中参加の方は少し軽めで計算しています。
+ざっくり100円単位で丸めています。
+
+合計：15,000円
+立替：佐藤さん
+
+佐藤さんへ
+・全員参加A：3,000円
+・全員参加B：3,000円
+・途中参加C：2,000円
+・途中参加D：2,000円
+
+PayPayでお願いします。
+不足分は佐藤さん側で調整しています。</div>
+      <p>
+        「不足分は立替者で調整」と一文入れておくと、端数の話で疑問が出ません。
+      </p>
+
+      <div class="cta">
+        <a class="cta-button" href="/">飲み会幹事会計でLINE文面を作る</a>
+        <p class="cta-note">
+          メンバー・支払い割合・立替者を入れるだけで、上の例文に近いLINE文面が自動生成できます。
+        </p>
+      </div>
+
+      <h2>5. 【メール向け】会社飲み会の会計報告文（構成）</h2>
+      <p>
+        上司を含む会社の飲み会では、メールやSlackで丁寧に伝えるケースが多くなります。次の7要素を順に並べると、読み手が必要な情報をスムーズに拾えます。
+      </p>
+      <ul>
+        <li><strong>件名</strong>（例: ◯月◯日 飲み会の会計報告）</li>
+        <li><strong>宛名</strong>（皆さま／チーム各位 など）</li>
+        <li><strong>お礼の一文</strong></li>
+        <li><strong>会計報告</strong>（合計・立替者・各自の支払い金額）</li>
+        <li><strong>支払い方法と締切</strong></li>
+        <li><strong>余剰金・不足分の扱いの説明</strong>（あれば）</li>
+        <li><strong>署名</strong>（幹事名）</li>
+      </ul>
+
+      <h2>6. 【メール向け】丁寧な会計報告文の例</h2>
+      <div class="mail-example">件名：◯月◯日 飲み会の会計報告
+
+皆さま
+
+お疲れさまです。幹事の◯◯です。
+先日は飲み会にご参加いただき、ありがとうございました。
+
+会計結果は以下の通りです。
+
+【合計】20,000円
+【立替】山田さん
+
+【各自のお支払い金額】
+・田中さん：5,000円
+・佐藤さん：5,000円
+・鈴木さん：4,000円
+・私（◯◯）：6,000円
+
+【お支払い方法】
+◯月◯日までに、PayPayまたは現金でお願いいたします。
+
+なお、今回は参加時間や役職を考慮して金額を調整しています。
+端数は100円単位で丸めており、不足分は立替の山田さん側で調整しています。
+
+ご不明点があればお気軽にお知らせください。
+よろしくお願いいたします。
+
+◯◯</div>
+      <p>
+        会社メールの場合、件名に日付を入れると後から検索しやすくなります。「お疲れさまです」「よろしくお願いいたします」など定型挨拶は省略せず、署名で締めるのが無難です。
+      </p>
+
+      <h2>7. 支払い方法を伝える文面</h2>
+      <p>
+        支払い方法ごとに、書き方のニュアンスが変わります。
+      </p>
+
+      <h3>現金の場合</h3>
+      <p>例：「次に会うときに現金でお願いします。お釣りのないようにご準備いただけると助かります。」</p>
+
+      <h3>PayPay などの送金サービスの場合</h3>
+      <p>例：「PayPay でお願いします。ID は別途お送りします（または、立替者から個別に送ります）。」</p>
+
+      <h3>銀行振込の場合</h3>
+      <p>例：「銀行振込でお願いします。口座情報は立替者から個別にお送りします。」</p>
+
+      <p>
+        <strong>注意：</strong>口座番号・PayPay
+        ID・電話番号など、個人を特定できる情報や金融に関わる情報は、グループLINE・グループメールで全員に共有するのは避け、個別連絡で送るのが安全です。
+      </p>
+
+      <!-- TODO: アフィリエイトリンク（送金サービス比較等）。将来配置するならここに。 -->
+
+      <div class="cta">
+        <a class="cta-button" href="/">飲み会幹事会計で支払いメモも一緒に作る</a>
+        <p class="cta-note">
+          支払い方法のメモ欄つき。「PayPayでお願いします」「現金でお願いします」などを文面末尾に自動追記。
+        </p>
+      </div>
+
+      <h2>8. 角が立たない言い回しのコツ</h2>
+      <p>
+        同じ内容でも、ちょっとした言い回しで受け取られ方が大きく変わります。次の置き換えは覚えておくと便利です。
+      </p>
+      <table class="word-table">
+        <thead>
+          <tr>
+            <th>角が立ちやすい表現</th>
+            <th>柔らかい言い換え</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>払ってください</td>
+            <td>お支払いをお願いします</td>
+          </tr>
+          <tr>
+            <td>◯◯さんは未払いです</td>
+            <td>まだの方はご確認お願いします</td>
+          </tr>
+          <tr>
+            <td>多めに払ってもらいます</td>
+            <td>役職・参加時間を考慮して調整しています</td>
+          </tr>
+          <tr>
+            <td>端数は幹事負担</td>
+            <td>100円単位で丸めており、差額は立替者側で調整しています</td>
+          </tr>
+          <tr>
+            <td>払えない方は連絡を</td>
+            <td>お支払いが難しい場合はお気軽にご相談ください</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        共通するコツは「<strong>主語を個人にしない</strong>」「<strong>命令形を避けて依頼形にする</strong>」の2点です。これだけで、同じ内容でも印象は大きく和らぎます。
+      </p>
+
+      <h2>9. 文面を自動で作る方法</h2>
+      <p>
+        本記事のような文面を毎回ゼロから書くと意外と時間がかかります。<strong>飲み会幹事会計サポート</strong>では、合計金額・メンバー・支払い割合・立替者・支払いメモを入力すると、LINEに貼り付けやすい文面を1タップで生成します。
+      </p>
+      <ul>
+        <li>役職や参加時間に合わせた<strong>支払い割合（倍率）</strong>を選択可能</li>
+        <li>100円・500円・1,000円単位での<strong>丸め</strong>に対応</li>
+        <li>「PayPayでお願いします」などの<strong>支払いメモ</strong>を末尾に自動追記</li>
+        <li>立替者の負担額・他メンバーの支払額が<strong>合計と必ず一致</strong>するよう調整</li>
+      </ul>
+
+      <div class="cta">
+        <a class="cta-button" href="/">飲み会幹事会計で会計文を作る</a>
+        <p class="cta-note">
+          ブラウザだけで完結。ログイン不要・保存なし。
+        </p>
+      </div>
+
+      <h2>参考</h2>
+      <p class="refs-note">
+        ※
+        以下は会計報告のマナーや幹事の心得を扱う外部記事へのリンクです。本記事の主張を裏付けるものではなく、考え方の参考としてご覧ください（リンク先のURLや内容は変更されることがあります）。
+      </p>
+      <ul class="refs">
+        <li>
+          <a
+            href="https://jp.indeed.com/career-advice/career-development/accounting-report-at-drinking-party"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Indeed
+            キャリアガイド「飲み会後の会計報告のマナー｜会計報告メールのポイントや例文」</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://torimero.com/topics/1369/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >鳥メロ「会社の飲み会で幹事になった！会計について気を付けたいことは？」</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://catering-selection.jp/blog/detail/54?keyword=%E6%97%A5%E7%A8%8B%E8%AA%BF%E6%95%B4"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ケータリングセレクション「会社の飲み会の幹事のお金の集め方は？回収のタイミングなど」</a
+          >
+        </li>
+        <li><a href="/">飲み会幹事会計サポート（このサイトのトップ）</a></li>
+        <li>
+          <a href="/guides/company-party-fee.html"
+            >会社の飲み会で役職別・年齢別に会費を分ける方法</a
+          >
+        </li>
+      </ul>
+
+      <p class="disclaimer">
+        ※ 本記事の文面例はあくまで<strong>一例</strong>です。会社・サークル・友人グループといった関係性や、参加メンバーとの距離感によって最適な表現は変わります。実際に送るときは、その場に合わせて言葉を調整してください。
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <a href="/">← 飲み会幹事会計サポート トップへ</a>
+    </footer>
+  </body>
+</html>

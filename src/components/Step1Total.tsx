@@ -24,17 +24,35 @@ export function Step1Total({ total, onChange, onNext }: Props) {
         </ol>
       </section>
 
-      <a
-        href="/guides/company-party-fee.html"
-        className="block rounded-xl border border-gray-200 bg-white p-3 transition-colors hover:border-indigo-300 hover:bg-indigo-50"
-      >
-        <p className="text-xs font-bold text-indigo-700">
-          会社の飲み会で役職別・年齢別に会費を分ける方法 →
+      <div>
+        <p className="mb-2 text-[11px] font-bold uppercase tracking-wide text-gray-500">
+          幹事向けガイド
         </p>
-        <p className="mt-1 text-[11px] leading-relaxed text-gray-500">
-          役職・年齢・途中参加を考慮した会費設定の考え方をまとめています。
-        </p>
-      </a>
+        <div className="flex flex-col gap-2">
+          <a
+            href="/guides/company-party-fee.html"
+            className="block rounded-xl border border-gray-200 bg-white p-3 transition-colors hover:border-indigo-300 hover:bg-indigo-50"
+          >
+            <p className="text-xs font-bold text-indigo-700">
+              会社の飲み会で役職別・年齢別に会費を分ける方法 →
+            </p>
+            <p className="mt-1 text-[11px] leading-relaxed text-gray-500">
+              役職・年齢・途中参加を考慮した会費設定の考え方をまとめています。
+            </p>
+          </a>
+          <a
+            href="/guides/line-payment-message.html"
+            className="block rounded-xl border border-gray-200 bg-white p-3 transition-colors hover:border-indigo-300 hover:bg-indigo-50"
+          >
+            <p className="text-xs font-bold text-indigo-700">
+              飲み会幹事がLINE・メールで送る会計報告文テンプレ →
+            </p>
+            <p className="mt-1 text-[11px] leading-relaxed text-gray-500">
+              LINE・メールそれぞれの文面例、角が立たない言い回しのコツをまとめています。
+            </p>
+          </a>
+        </div>
+      </div>
 
       <div>
         <h2 className="text-xl font-bold text-gray-900">合計金額</h2>
