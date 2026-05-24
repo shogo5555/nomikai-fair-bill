@@ -27,6 +27,15 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nomikai-fair-bill-production.up.railway.app/" />
     <meta property="og:image" content="https://nomikai-fair-bill-production.up.railway.app/og-image.png" />
+
+    <!-- Google Analytics 4 (測定IDは実IDに置き換える) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BG43R57LY8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BG43R57LY8', { send_page_view: true });
+    </script>
   </head>
   <body>
     <div id="root"></div>

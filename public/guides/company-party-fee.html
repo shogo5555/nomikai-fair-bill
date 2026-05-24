@@ -172,6 +172,15 @@
         margin-top: 24px;
       }
     </style>
+
+    <!-- Google Analytics 4 (測定IDは実IDに置き換える) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BG43R57LY8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BG43R57LY8', { send_page_view: true });
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -216,7 +225,12 @@
       </p>
 
       <div class="cta">
-        <a class="cta-button" href="/">飲み会幹事会計で計算する</a>
+        <a
+          class="cta-button"
+          href="/"
+          onclick="window.gtag && gtag('event','guide_cta_click',{from:'company-party-fee',placement:'middle'})"
+          >飲み会幹事会計で計算する</a
+        >
         <p class="cta-note">
           役職別ラベル（多め・少し多め・ごちそう寄りなど）を選ぶだけで自動配分
         </p>
@@ -275,7 +289,12 @@ PayPayでお願いします</div>
       </ul>
 
       <div class="cta">
-        <a class="cta-button" href="/">飲み会幹事会計で計算する</a>
+        <a
+          class="cta-button"
+          href="/"
+          onclick="window.gtag && gtag('event','guide_cta_click',{from:'company-party-fee',placement:'end'})"
+          >飲み会幹事会計で計算する</a
+        >
         <p class="cta-note">
           メンバーと支払い割合を入力するだけ。LINE貼付け用テキストもワンタップで生成。
         </p>

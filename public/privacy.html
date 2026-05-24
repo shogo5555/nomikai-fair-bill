@@ -93,6 +93,15 @@
         border-top: 1px dashed var(--gray-200);
       }
     </style>
+
+    <!-- Google Analytics 4 (測定IDは実IDに置き換える) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BG43R57LY8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BG43R57LY8', { send_page_view: true });
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -125,12 +134,60 @@
         >をご参照ください。
       </p>
 
-      <h2>4. 将来的に導入する可能性のある機能</h2>
+      <h2>4. アクセス解析（Google Analytics 4）</h2>
+      <p>
+        本サービスでは、サービス改善のために Google 提供の Google Analytics 4（以下「GA4」）を利用し、利用状況を把握しています。
+      </p>
+      <p><strong>GA4 が取得する情報</strong></p>
+      <ul>
+        <li>ページ閲覧数・滞在時間・遷移経路</li>
+        <li>訪問元の概略地域・利用デバイス・ブラウザ</li>
+        <li>
+          計算ツールの開始・完了、コピー操作、ガイド記事への遷移など、ボタン操作の回数
+        </li>
+      </ul>
+      <p><strong>GA4 に送信していない情報</strong></p>
+      <p>
+        本サービスで入力された以下の情報は、GA4 に<strong>一切送信していません</strong>。
+      </p>
+      <ul>
+        <li>参加者名・立替者名</li>
+        <li>合計金額・各人の支払い金額</li>
+        <li>支払いメモ</li>
+      </ul>
+      <p><strong>IP アドレス等の取り扱い</strong></p>
+      <p>
+        GA4 が取得する IP アドレス等の取り扱いについては、Google が公表する GA4 の仕様に基づき処理されます。詳細は<a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Google のプライバシーポリシー</a
+        >および<a
+          href="https://support.google.com/analytics/answer/6004245"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GA4 のデータ取り扱いに関する公式情報</a
+        >をご参照ください。
+      </p>
+      <p><strong>広告関連機能について</strong></p>
+      <p>
+        当面、Google Signals や広告パーソナライズ機能は<strong>利用しません</strong>。広告関連の機能を有効化する場合は、本ポリシーを更新したうえで明示します。
+      </p>
+      <p><strong>オプトアウト</strong></p>
+      <p>
+        GA4 の計測を拒否したい場合は、<a
+          href="https://tools.google.com/dlpage/gaoptout?hl=ja"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Google Analytics オプトアウト アドオン</a
+        >を利用するか、ブラウザの設定で Cookie・トラッキングを制限してください。
+      </p>
+
+      <h2>5. 将来的に導入する可能性のある機能</h2>
       <p>
         本サービスは継続的に改善を続けています。今後、以下のような機能を導入する場合があります。
       </p>
       <ul>
-        <li>アクセス解析ツール（例: Google Analytics）</li>
         <li>広告配信サービス（例: Google AdSense）</li>
         <li>アフィリエイトリンク</li>
         <li>localStorage 等を使った、利用者の端末内への入力データの保存</li>
@@ -139,17 +196,17 @@
         これらの機能を導入した場合は、本ポリシーを更新したうえで、可能な範囲で本サービス上でお知らせします。
       </p>
 
-      <h2>5. Cookie・外部サービスの利用</h2>
+      <h2>6. Cookie・外部サービスの利用</h2>
       <p>
-        本サービス自体は現時点で Cookie を発行していません。ただし、将来的にアクセス解析や広告配信サービスを導入した場合、それらが Cookie や類似の技術を利用することがあります。導入後は、本ポリシーで内容を明示します。
+        本サービス自体は独自の Cookie を発行していません。ただし、上記の GA4 は計測のために Cookie および類似の技術を利用します。将来的に広告配信サービスを導入した場合、それらも Cookie や類似の技術を利用することがあります。
       </p>
 
-      <h2>6. 第三者への情報提供</h2>
+      <h2>7. 第三者への情報提供</h2>
       <p>
         運営者は、利用者の入力情報を、利用者の同意なく第三者へ提供することはありません。ただし、法令にもとづく開示要請があった場合はこの限りではありません。
       </p>
 
-      <h2>7. お問い合わせ</h2>
+      <h2>8. お問い合わせ</h2>
       <p>
         本サービスへのご意見・ご質問は、<a
           href="https://forms.gle/6YtDK887Z1z8M5Mn8"
@@ -159,7 +216,7 @@
         >からお願いいたします。
       </p>
 
-      <h2>8. ポリシーの変更</h2>
+      <h2>9. ポリシーの変更</h2>
       <p>
         本ポリシーは、必要に応じて変更される場合があります。変更後のポリシーは、本ページに掲載された時点から効力を持つものとします。重要な変更がある場合は、可能な範囲でサービス上でもお知らせします。
       </p>

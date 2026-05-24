@@ -1,3 +1,5 @@
+import { track } from '../utils/analytics'
+
 type Props = {
   total: number
   onChange: (value: number) => void
@@ -31,6 +33,12 @@ export function Step1Total({ total, onChange, onNext }: Props) {
         <div className="flex flex-col gap-2">
           <a
             href="/guides/company-party-fee.html"
+            onClick={() =>
+              track({
+                name: 'guide_link_click',
+                guide_id: 'company-party-fee',
+              })
+            }
             className="block rounded-xl border border-gray-200 bg-white p-3 transition-colors hover:border-indigo-300 hover:bg-indigo-50"
           >
             <p className="text-xs font-bold text-indigo-700">
@@ -42,6 +50,12 @@ export function Step1Total({ total, onChange, onNext }: Props) {
           </a>
           <a
             href="/guides/line-payment-message.html"
+            onClick={() =>
+              track({
+                name: 'guide_link_click',
+                guide_id: 'line-payment-message',
+              })
+            }
             className="block rounded-xl border border-gray-200 bg-white p-3 transition-colors hover:border-indigo-300 hover:bg-indigo-50"
           >
             <p className="text-xs font-bold text-indigo-700">

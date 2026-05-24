@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { CoefficientPreset, Member, RoundingUnit } from './types'
 import { CUSTOM_PRESET_ID } from './types'
+import { track } from './utils/analytics'
 import { applyRounding, calculateBill } from './utils/calculateBill'
 import {
   DEFAULT_PRESET_ID,
@@ -110,7 +111,10 @@ function App() {
             <Step1Total
               total={total}
               onChange={setTotal}
-              onNext={() => setStep(2)}
+              onNext={() => {
+                track({ name: 'start_calculation' })
+                setStep(2)
+              }}
             />
           )}
           {step === 2 && (
@@ -133,7 +137,13 @@ function App() {
               onSelect={setPayerId}
               onChangeMemo={setPaymentMemo}
               onBack={() => setStep(2)}
-              onNext={() => setStep(4)}
+              onNext={() => {
+                track({
+                  name: 'complete_calculation',
+                  member_count: members.length,
+                })
+                setStep(4)
+              }}
             />
           )}
           {step === 4 && (
@@ -163,6 +173,7 @@ function App() {
             href="https://forms.gle/6YtDK887Z1z8M5Mn8"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track({ name: 'feedback_click', from: 'top' })}
             className="underline hover:text-gray-600"
           >
             フィードバック

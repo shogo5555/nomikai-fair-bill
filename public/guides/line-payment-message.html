@@ -244,6 +244,15 @@
         margin-top: 24px;
       }
     </style>
+
+    <!-- Google Analytics 4 (測定IDは実IDに置き換える) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BG43R57LY8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BG43R57LY8', { send_page_view: true });
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -342,7 +351,12 @@ PayPayでお願いします。
       </p>
 
       <div class="cta">
-        <a class="cta-button" href="/">飲み会幹事会計でLINE文面を作る</a>
+        <a
+          class="cta-button"
+          href="/"
+          onclick="window.gtag && gtag('event','guide_cta_click',{from:'line-payment-message',placement:'middle'})"
+          >飲み会幹事会計でLINE文面を作る</a
+        >
         <p class="cta-note">
           メンバー・支払い割合・立替者を入れるだけで、上の例文に近いLINE文面が自動生成できます。
         </p>
@@ -417,7 +431,12 @@ PayPayでお願いします。
       <!-- TODO: アフィリエイトリンク（送金サービス比較等）。将来配置するならここに。 -->
 
       <div class="cta">
-        <a class="cta-button" href="/">飲み会幹事会計で支払いメモも一緒に作る</a>
+        <a
+          class="cta-button"
+          href="/"
+          onclick="window.gtag && gtag('event','guide_cta_click',{from:'line-payment-message',placement:'middle'})"
+          >飲み会幹事会計で支払いメモも一緒に作る</a
+        >
         <p class="cta-note">
           支払い方法のメモ欄つき。「PayPayでお願いします」「現金でお願いします」などを文面末尾に自動追記。
         </p>
@@ -473,7 +492,12 @@ PayPayでお願いします。
       </ul>
 
       <div class="cta">
-        <a class="cta-button" href="/">飲み会幹事会計で会計文を作る</a>
+        <a
+          class="cta-button"
+          href="/"
+          onclick="window.gtag && gtag('event','guide_cta_click',{from:'line-payment-message',placement:'end'})"
+          >飲み会幹事会計で会計文を作る</a
+        >
         <p class="cta-note">
           ブラウザだけで完結。ログイン不要・保存なし。
         </p>

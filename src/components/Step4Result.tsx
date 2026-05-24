@@ -5,6 +5,7 @@ import type {
   RoundedBillResult,
   RoundingUnit,
 } from '../types'
+import { track } from '../utils/analytics'
 import { formatRoundedResultForCopy } from '../utils/calculateBill'
 import { ROUNDING_UNITS, formatWeightLabel } from '../utils/presets'
 
@@ -45,6 +46,7 @@ export function Step4Result({
     try {
       await navigator.clipboard.writeText(copyText)
       setCopied(true)
+      track({ name: 'copy_result', rounding_unit: rounded.unit })
       setTimeout(() => setCopied(false), 2000)
     } catch {
       setCopied(false)
