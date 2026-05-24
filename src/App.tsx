@@ -151,13 +151,21 @@ function App() {
         </main>
 
         <footer className="px-5 pb-5 pt-2 text-center text-[10px] text-gray-400">
+          <a href="/terms.html" className="underline hover:text-gray-600">
+            利用規約
+          </a>
+          <span className="mx-2 text-gray-300">·</span>
+          <a href="/privacy.html" className="underline hover:text-gray-600">
+            プライバシー
+          </a>
+          <span className="mx-2 text-gray-300">·</span>
           <a
             href="https://forms.gle/6YtDK887Z1z8M5Mn8"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-gray-600"
           >
-            フィードバックを送る
+            フィードバック
           </a>
         </footer>
       </div>
