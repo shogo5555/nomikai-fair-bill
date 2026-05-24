@@ -1,0 +1,107 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1200 630"
+  width="1200"
+  height="630"
+  role="img"
+  aria-label="飲み会幹事会計 - 役職・途中参加も考慮できる - 会計結果をLINEにそのままコピー"
+>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#312e81" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Decorative corner dots (very subtle) -->
+  <g fill="#ffffff" opacity="0.15">
+    <circle cx="80" cy="80" r="6" />
+    <circle cx="1120" cy="80" r="6" />
+    <circle cx="80" cy="550" r="6" />
+    <circle cx="1120" cy="550" r="6" />
+  </g>
+
+  <!-- Small badge: 幹事向け -->
+  <g>
+    <rect
+      x="490"
+      y="100"
+      width="220"
+      height="50"
+      rx="25"
+      fill="#ffffff"
+      opacity="0.18"
+    />
+    <text
+      x="600"
+      y="134"
+      text-anchor="middle"
+      font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif"
+      font-size="24"
+      font-weight="700"
+      fill="#ffffff"
+    >
+      幹事向け / 30秒
+    </text>
+  </g>
+
+  <!-- Main title -->
+  <text
+    x="600"
+    y="270"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif"
+    font-size="110"
+    font-weight="900"
+    fill="#ffffff"
+    letter-spacing="-2"
+  >
+    飲み会幹事会計
+  </text>
+
+  <!-- Subtitle -->
+  <text
+    x="600"
+    y="345"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif"
+    font-size="38"
+    font-weight="500"
+    fill="#c7d2fe"
+  >
+    役職・途中参加も考慮できる
+  </text>
+
+  <!-- Feature pill -->
+  <g>
+    <rect x="220" y="420" width="760" height="110" rx="55" fill="#ffffff" />
+    <text
+      x="600"
+      y="488"
+      text-anchor="middle"
+      font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', Meiryo, sans-serif"
+      font-size="40"
+      font-weight="700"
+      fill="#4f46e5"
+    >
+      会計結果をLINEにそのままコピー
+    </text>
+  </g>
+
+  <!-- URL at bottom -->
+  <text
+    x="600"
+    y="595"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif"
+    font-size="20"
+    font-weight="500"
+    fill="#ffffff"
+    opacity="0.7"
+  >
+    nomikai-fair-bill-production.up.railway.app
+  </text>
+</svg>
